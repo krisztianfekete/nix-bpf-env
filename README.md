@@ -1,6 +1,8 @@
 # nix-bpf-env
 My adhoc dev environment for BPF development on NixOS
 
+![image](https://user-images.githubusercontent.com/103492698/196720215-d2a591ef-1877-4642-a219-7f4ab10c8d82.png)
+
 ## Where am I using this?
 
 I am running an aarch64 NixOS image in UTM on an Apple M1 Max laptop.
@@ -83,4 +85,3 @@ lorri: building environment............................. done
 
 Now, I have all the tools listed above. If I `exit`, I won't have the packages installed, only my clean system.
 
- ![Screenshot of some bpf programs running in this environment](nix-bpf-env.png)
