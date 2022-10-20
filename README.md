@@ -5,7 +5,7 @@ My adhoc dev environment for BPF development on NixOS
 
 ## Where am I using this?
 
-I am running an aarch64 NixOS image in UTM on an Apple M1 Max laptop.
+I am mainly running this on an aarch64 NixOS image in UTM on an Apple M1 Max laptop.
 
 ```console
 [fktkrt@virtan1x:~/projects/bpf]$ nix-info -m
@@ -18,6 +18,21 @@ I am running an aarch64 NixOS image in UTM on an Apple M1 Max laptop.
  - channels(fktkrt): `"home-manager-22.05.tar.gz"`
  - nixpkgs: `/nix/var/nix/profiles/per-user/root/channels/nixos`
 ```
+
+It is also working on my Intel MBP as well (in a VirtualBox VM), but that is not tested heavily.
+The only change required there is to disable `bpftools` in `shell.nix`.
+
+```console
+[fktkrt@virtanix:~/nixos-configs]$ nix-info -m
+ - system: `"x86_64-linux"`
+ - host os: `Linux 5.15.59, NixOS, 22.05 (Quokka), 22.05.2322.92fe622fdfe`
+ - multi-user?: `yes`
+ - sandbox: `yes`
+ - version: `nix-env (Nix) 2.8.1`
+ - channels(fktkrt): `"home-manager-22.05.tar.gz"`
+ - nixpkgs: `/nix/var/nix/profiles/per-user/root/channels/nixos`
+```
+
 ## Workflow
 
 I am using `home-manager`, which has a `dev.nix` module similar to this:
