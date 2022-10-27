@@ -5,7 +5,38 @@ My adhoc dev environment for BPF development on NixOS
 
 ## Where am I using this?
 
-I am mainly running this on an aarch64 NixOS image in UTM on an Apple M1 Max laptop.
+I am mainly using the flake version of the environment on an aarch64 NixOS image in UTM on an Apple M1 Max laptop.
+
+## Try without installing
+
+The easiest way to try out this and experiment with the environment is to run this command:
+
+```console
+nix develop github:krisztianfekete/nix-bpf-env
+```
+
+## Default workflow
+
+I am managing my system via `home-manager`, and just using this flake as an experimental ad-hoc environment for BPF research & development.
+
+To build the environment, I can just go to a folder where I have this `flake.nix` and pull up the environment, e.g.:
+
+```console
+[fktkrt@virtan1x:~/projects/bpf]$ nix develop
+
+# and all the packages listed will be available, see:
+fktkrt@virtan1x:~/projects/bpf]$ clang --version
+clang version 14.0.6
+Target: aarch64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /nix/store/4ycs8pf3i5pv40hzp4bgvjnqdlag1dg5-clang-14.0.6/bin
+```
+
+This gives me more flexibility compared to pulling and running the env from github repo directly, e.g. I can make changes on the fly in my local `flake.nix` file. 
+
+## lorri + direnv version
+
+Originally, I started out with this `lorri` based setup.
 
 ```console
 [fktkrt@virtan1x:~/projects/bpf]$ nix-info -m
@@ -33,7 +64,7 @@ The only change required there is to disable `bpftools` in `shell.nix`.
  - nixpkgs: `/nix/var/nix/profiles/per-user/root/channels/nixos`
 ```
 
-## Workflow
+### Workflow
 
 I am using `home-manager`, which has a `dev.nix` module similar to this:
 
@@ -99,4 +130,3 @@ lorri: building environment............................. done
 ```
 
 Now, I have all the tools listed above. If I `exit`, I won't have the packages installed, only my clean system.
-
