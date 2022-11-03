@@ -1,7 +1,7 @@
 # nix-bpf-env
 My adhoc dev environment for BPF development on NixOS
 
-![image](https://user-images.githubusercontent.com/103492698/196720215-d2a591ef-1877-4642-a219-7f4ab10c8d82.png)
+![nix-bpf-env](https://user-images.githubusercontent.com/103492698/199709006-bf2f0020-8276-41dd-b807-93a0da6ac234.png)
 
 ## Where am I using this?
 
