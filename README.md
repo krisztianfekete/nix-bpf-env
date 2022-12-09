@@ -14,6 +14,7 @@ The easiest way to try out this and experiment with the environment is to run th
 ```console
 nix develop github:krisztianfekete/nix-bpf-env
 ```
+And you can get started hacking (e)BPF right away!
 
 ## Default workflow
 
@@ -33,6 +34,8 @@ InstalledDir: /nix/store/4ycs8pf3i5pv40hzp4bgvjnqdlag1dg5-clang-14.0.6/bin
 ```
 
 This gives me more flexibility compared to pulling and running the env from github repo directly, e.g. I can make changes on the fly in my local `flake.nix` file. 
+
+> Note: the lorri + direnv workflow is not actively used so I cannot guarantee that it won't break from time to time.
 
 ## lorri + direnv version
 
@@ -64,7 +67,7 @@ The only change required there is to disable `bpftools` in `shell.nix`.
  - nixpkgs: `/nix/var/nix/profiles/per-user/root/channels/nixos`
 ```
 
-### Workflow
+### lorri + direnv workflow
 
 I am using `home-manager`, which has a `dev.nix` module similar to this:
 

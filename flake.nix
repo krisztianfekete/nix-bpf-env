@@ -1,6 +1,8 @@
 {
+  description = "Nix flake for local BPF dev experiments";
+
   inputs = {
-    nixos-stable.url = "github:NixOS/nixpkgs/nixos-22.05";
+    nixos-stable.url = "github:NixOS/nixpkgs/nixos-22.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -15,7 +17,7 @@
         devShells.default = pkgs.mkShell {
           hardeningDisable = [ "stackprotector" ];
           packages = [
-            unstable-pkgs.clang_14 # use unstable to pull 14.0.6 instead of 14.0.1
+            pkgs.clang_14
             pkgs.llvm
             pkgs.elfutils
             pkgs.zlib
