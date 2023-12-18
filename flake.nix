@@ -2,7 +2,7 @@
   description = "Nix flake for local BPF dev experiments";
 
   inputs = {
-    nixos-stable.url = "github:NixOS/nixpkgs/nixos-22.11";
+    nixos-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
